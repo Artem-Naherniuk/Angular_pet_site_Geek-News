@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "geek-news-946fe": {
-      "hosting": {
-        "geek-news": [
-          "geek-news-946fe"
-        ]
-      }
-    }
+  "projects": {
+    "default": "geek-news-946fe"
   }
 }

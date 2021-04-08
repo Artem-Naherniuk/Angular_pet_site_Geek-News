@@ -31,7 +31,15 @@ export class HeaderComponent implements OnInit {
   signForm = new FormGroup({
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
-  })
+  });
+
+  gMenu: string = 'url(../../../../assets/images/bars-g.svg)';
+
+  wMenu: string = 'url(../../../../assets/images/bars.svg)';
+
+  gSearchPhone: string = 'url(../../../../assets/images/search-alt-g.svg)';
+  
+  wSearchPhone:string = 'url(../../../../assets/images/search-alt.svg)';
 
   constructor(
     private getSearch: GetSearchService,
