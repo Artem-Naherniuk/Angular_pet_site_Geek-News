@@ -1,0 +1,54 @@
+<div class="forBack">
+  <div class="background">
+    Geek News
+  </div>
+</div>
+<main>
+  <div class="allTop">
+    <div class="lastNews" (click)="checkIdOne()"   [routerLink]=" '/news' " [style.background-image]="'url(' + lastNewsImage  + ')'">
+      <div class="neming">
+        <span id="title">{{ lastNewsTitle }}</span>
+        <span id="description">{{lastNewsDesc}}</span>
+       <div class="bataAndCategory">
+        <span id="date">{{lastNewsData}}</span>
+        <span id="category">{{lastNewsCat}}</span>
+       </div>
+      </div>
+    </div>
+    <div class="topRight">
+        <div class="usualNews" (click)="checkIdTwo()" [routerLink]=" '/news' " [style.background-image]="'url(' + twolastNewsImage + ')'">
+            <div class="namingUsual">
+              <span id="titleUsual">{{twolastNewsTitle}}</span>
+              <span id="descriptionUsual">{{twolastNewsDesc}}</span>
+              <div class="bataAndCategory">
+                <span id="dateUsual">{{twolastNewsData}}</span>
+                <span id="categoryUsual">{{twolastNewsCat}}</span>
+               </div>
+            </div>
+          </div>
+      <div class="usualNews" (click)="checkIdThree()" [routerLink]=" '/news' " [style.background-image]="'url(' + threelastNewsImage + ')'">
+        <div class="namingUsual">
+          <span id="titleUsual">{{threelastNewsTitle}}</span>
+          <span id="descriptionUsual">{{threelastNewsDesc}}</span>
+          <div class="bataAndCategory">
+            <span id="dateUsual">{{threelastNewsData}}</span>
+            <span id="categoryUsual">{{threelastNewsCat}}</span>
+           </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="forUsualNews">
+    <div class="usualNews" (click)="checkId(i)" [routerLink]=" '/news' " *ngFor="let news of forSmalNews; index as i"  [style.background-image]="'url(' + news?.image + ')'" >
+      <div class="namingUsual">
+        <span id="titleUsual">{{news?.title}}</span>
+        <span id="descriptionUsual">{{news?.description}}</span>
+        <div class="bataAndCategory">
+          <span id="dateUsual">{{news?.data}}</span>
+          <span id="categoryUsual">{{news?.category}}</span>
+         </div>
+      </div>
+  </div> 
+  </div>
+</main>

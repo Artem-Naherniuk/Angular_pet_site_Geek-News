@@ -1,0 +1,77 @@
+<div class="container" [style.opacity]="uploadVis ? '1' : '0.3'">
+  <button id="create" (click)="create()" [style.display]="!createVis ? 'none' : 'block'">Create</button>
+  <div class="addNews" [style.display]="createVis ? 'none' : 'flex'" (mousemove)="checkInp()">
+
+    <span [style.margin-bottom]="'40px'" [style.color]="'rgb(99, 198, 90)'">Add News </span>
+    <span>Title </span>
+
+    <input type="text" placeholder="Write Title" [(ngModel)]="title" name="title"
+      [style.border]="title =='' ?'3px solid red': '3px solid green'">
+
+    <span>Description </span>
+
+    <input type="text" placeholder="Write Description" [(ngModel)]="description" name="description"
+      [style.border]="description == '' ?'3px solid red': '3px solid green'">
+
+    <span>Text </span>
+    <textarea id="area" cols="30" rows="10" placeholder="Write Text" [(ngModel)]="text" name="text"
+      [style.border]="text == '' ?'3px solid red': '3px solid green'"></textarea>
+
+    <span>Author </span> <input type="text" placeholder="Write Author" [(ngModel)]="author" name="author"
+      [style.border]="author == '' ?'3px solid red': '3px solid green'">
+
+    <span>Category </span>
+    <select (change)="selectChangeHandler($event)">
+      <optgroup>
+        <option value="Games" selected>Games</option>
+        <option value="Movies">Movies</option>
+        <option value="Music">Music</option>
+        <option value="Sport">Sport</option>
+        <option value="Technology">Technology</option>
+      </optgroup>
+    </select>
+
+    <input (change)="uploadFile($event)" type="file"
+      [style.border]="puthToImage == '' ?'3px solid red': '3px solid green'">
+
+    <button id="addNews" [textContent]="editStatus ? 'save' : 'add'" (click)="addNews()" [disabled]="validInp">Add
+      News</button>
+
+  </div>
+  <div class="forTable">
+    <table>
+      <thead>
+        <td>Title</td>
+        <td>Images</td>
+        <td>Description</td>
+        <td>Text</td>
+        <td>Data</td>
+        <td>Category</td>
+        <td>Author</td>
+        <td>ID</td>
+        <td>Edit</td>
+        <td>Delete</td>
+
+      </thead>
+      <tbody *ngFor="let oneNews of newsArr; index as i">
+        <td> {{oneNews.title}} </td>
+        <td>
+          <div id="newsImage" [style.background-image]="'url(' + oneNews.image + ')'"></div>
+        </td>
+        <td> {{oneNews.description}} </td>
+        <td> {{ oneNews.shortText }} </td>
+        <td> {{oneNews.data}} </td>
+        <td> {{oneNews.category}} </td>
+        <td> {{oneNews.author}} </td>
+        <td> {{i+1}} </td>
+        <td><button id="edit" (click)="editNews(oneNews)">Edit</button></td>
+        <td><button id="delete" (click)="deleteNews(oneNews)">Delete</button></td>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="alert" [style.display]="uploadVis ? 'none' : 'flex'">
+  <span>Image uploaded</span>
+  <button id="close" (click)="close()">Close</button>
+</div>

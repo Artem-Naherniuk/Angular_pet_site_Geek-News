@@ -1,0 +1,29 @@
+<div class="container" >
+  <span id="title">{{titleNews}}</span>
+  <span id="description">{{descrNews}}</span>
+  <div class="imageAndSoc">
+    <div class="allSoc">
+      <div class="soc" id="inst"></div>
+      <div class="soc" id="face"></div>
+      <div class="soc" id="linkE"></div>
+      <div class="soc" id="twit"></div>
+    </div>
+    <div id="image" [style.background-image]="'url(' + imageNews + ')'"></div>
+  </div>
+  <div class="allInfo">
+    <div class="allInfoLeft">
+      <span id="data"><span class="titleInf">Data: </span>{{datatNews}}</span>
+      <span id="category"><span class="titleInf">Category: </span>{{catNews}}</span>
+      <span id="author"><span class="titleInf">Author: </span>{{authorNews}}</span>
+    </div>
+    <div class="allInfoRight" [innerHTML]="textNews"></div>
+  </div>
+  <div class="allRecomed">
+    <div class="news" (click)="checkId(i)" [routerLink]=" '/news' " *ngFor="let news of recNews;index as i" [style.background-image]="'url(' + news.image + ')'" >
+      <div class="allInfoRecomed">
+        <span id="titleRecomend">{{news.title}}</span><br>
+        <span id="descriptionRecomend">{{news.description}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="forBack">
+    <div class="background">
+      <span id="title">Geek News</span>
+    </div>
+  </div>
+  
+  <div class="container" [style.display]="existOrnotExist ? 'flex' : 'none'">
+    <div class="usualNews" [routerLink]=" '/news' " *ngFor="let news of searchingNews; index as i" [style.background-image]="'url(' + news.image + ')'" (click)="checkId(i)">
+      <div class="namingUsual">
+        <span id="titleUsual">{{news.title}}</span>
+        <span id="descriptionUsual">{{news.description}}</span>
+        <div class="bataAndCategory">
+          <span id="dateUsual">{{news.data}}</span>
+          <span id="categoryUsual">{{news.category}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alertNotExist" [style.display]="existOrnotExist ? 'none' : 'flex'">
+    <p>This news does not exist</p>
+  </div>
+  

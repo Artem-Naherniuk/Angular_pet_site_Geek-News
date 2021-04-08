@@ -1,0 +1,74 @@
+<header>
+  <div class="menu">
+    <div id="menuIcon" (click)="menu()"
+      [style.background-image]="visibleMenu ? 'url(../../../../assets/images/bars-g.svg)' : 'url(../../../../assets/images/bars.svg)'">
+    </div>
+  </div>
+
+  <div id="logo" [routerLink]="[ '/home' ]"></div>
+
+  <div class="pages">
+    <span class="page" [routerLink]="[ '/games' ]">Games</span>
+    <span class="page" [routerLink]="[ '/movies' ]">Movies</span>
+    <span class="page" [routerLink]="[ '/music' ]">Music</span>
+    <span class="page" [routerLink]="[ '/sport' ]">Sport</span>
+    <span class="page" [routerLink]="[ '/technology' ]">Technology</span>
+  </div>
+
+  <div class="allSearch">
+    <div id="user" [style.display]="userPage ? 'block' : 'none'"></div>
+    <div id="login" (click)="doVisibleLogin()" [style.display]="userPage ? 'none' : 'block'"></div>
+    <div id="search"></div>
+    <input id="inp" type="text" placeholder="Search news" [(ngModel)]="searchPc" name="searchPc"
+      (keydown)="keyToSearch($event)">
+  </div>
+
+  <div class="allSearchPhone">
+    <div id="searchPhone" (click)="visibleInputP()"
+      [style.background-image]="visibleInputPhone ? 'url(../../../../assets/images/search-alt-g.svg)' : 'url(../../../../assets/images/search-alt.svg)'">
+    </div>
+    <div id="loginPhone" (click)="doVisibleLogin()" [style.display]="userPage ? 'none' : 'block'"></div>
+    <div id="userPhone" [style.display]="userPage ? 'block' : 'none'"></div>
+  </div>
+</header>
+<div class="searchPhone" [style.height]="visibleInputPhone ? '0px': '30px'">
+  <input id="inpPhone" type="text" placeholder="Search news" [(ngModel)]="inpPhone" name="inpPhone">
+  <button id="SearchButton" (click)="search()">Search</button>
+</div>
+<div class="navbarPhone" [style.height]="visibleMenu ? '0px': '415px'">
+  <span class="page" (click)="closePhonePage()" [routerLink]="[ '/games' ]">Games</span>
+  <hr>
+  <span class="page" (click)="closePhonePage()" [routerLink]="[ '/movies' ]">Movies</span>
+  <hr>
+  <span class="page" (click)="closePhonePage()" [routerLink]="[ '/music' ]">Music</span>
+  <hr>
+  <span class="page" (click)="closePhonePage()" [routerLink]="[ '/sport' ]">Sport</span>
+  <hr>
+  <span class="page" (click)="closePhonePage()" [routerLink]="[ '/technology' ]">Technology</span>
+  <hr>
+</div>
+
+<div class="allAlertLog" [style.display]="visibleLog ? 'none' : 'flex'">
+  <div class="alertLog" [style.display]="visibleLog ? '' : 'flex'">
+    <div id="closeAlertLog" (click)="closeVisibleLog()"></div>
+  
+    <span id="signInText" [textContent]="visibleName ? 'SIGN UP' : 'SIGN IN' "></span>
+  
+    <span id="alertExist" [style.display]="incPass ? 'none' : 'block'">Incorrect password or email</span>
+    <span id="alertExist" [style.display]="existAcc ? 'none' : 'block'">This account already exist</span>
+
+  <form [formGroup]="signForm" (ngSubmit)="submit()" >
+  
+    <input class="logInp" type="text" formControlName="email" pattern="[a-zA-Z0-9.-]+@\w+\.\w+" placeholder="Email" >
+  
+    <input class="logInp" type="password" formControlName="password" pattern="\w{8,15}" placeholder="Password">
+  
+    <button (click)="addUserOrLog()" [textContent]="visibleName ? 'SIGN UP' : 'SIGN IN' "
+    type="submit" [disabled]="!signForm.valid"></button>
+
+  </form>
+  
+    <span id="signUpText" (click)="doSignUp()" 
+    [textContent]="visibleName ? 'If you have account you can Sign In' : 'If you have not account you can Sign Up' "></span>
+  </div>
+</div>

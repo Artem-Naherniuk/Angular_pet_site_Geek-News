@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "geek-news-946fe": {
+      "hosting": {
+        "geek-news": [
+          "geek-news-946fe"
+        ]
+      }
+    }
+  }
+}

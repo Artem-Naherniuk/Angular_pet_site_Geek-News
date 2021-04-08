@@ -1,0 +1,18 @@
+<div class="forBack">
+    <div class="background">
+      <span id="title">Music</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="usualNews" [routerLink]=" '/news' " *ngFor="let news of newsForPages;index as i" [style.background-image]="'url(' + news.image + ')'" (click)="checkId(i)">
+      <div class="namingUsual">
+        <span id="titleUsual">{{news.title}}</span>
+        <span id="descriptionUsual">{{news.description}}</span>
+        <div class="bataAndCategory">
+          <span id="dateUsual">{{news.data}}</span>
+          <span id="categoryUsual">{{news.category}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

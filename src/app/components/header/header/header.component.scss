@@ -1,0 +1,621 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "bungee";
+    src: url(../../../../assets/fonts/Bungee/Bungee-Regular.ttf);
+}
+
+@font-face{
+    font-family: "nunito";
+    src: url(../../../../assets/fonts/Nunito/Nunito-Black.ttf);
+}
+
+
+header{
+    width: 100%;
+    height: 55px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    overflow: hidden;
+}
+
+.menu{
+    display: none;
+}
+
+#logo{
+    width: 250px;
+    height: 60px;
+    margin: 0;
+    margin-left: 10px;
+    background-image: url(../../../../assets/images/geek-news-logo-header.png);
+    background-repeat: no-repeat;
+    background-size: 140%;
+    background-position: center;
+}
+
+#logo:hover{
+cursor: pointer;
+}
+
+#logo:focus{
+    outline: none;
+}
+
+.pages{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-family: bungee;
+    color: white;
+}
+
+.page{
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s;
+    rotate: color, background-color;
+    border-radius: 10px;
+}
+
+.page:hover{
+    cursor: pointer;
+    background-color: gray;
+    border: none;
+    border-radius: 10px;
+    color: rgb(99, 198, 90);
+}
+
+.page:focus{
+    color: rgb(99, 198, 90);
+    outline: none;
+}
+
+.allSearch{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#search{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    background-image: url(../../../../assets/images/search-alt-g.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+    z-index: 1;
+}
+
+#login{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    background-image: url(../../../../assets/images/sign-in-alt-g.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+    z-index: 1;
+}
+
+#login:hover{
+    cursor: pointer;
+    background-image: url(../../../../assets/images/sign-in-alt.svg);
+}
+
+#user{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    background-image: url(../../../../assets/images/user-g.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+    z-index: 1;
+}
+
+#user:hover{
+    cursor: pointer;
+    background-image: url(../../../../assets/images/user.svg);
+}
+
+#inp{
+    width: 0;
+    height: 25px;
+    display: block;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.7s;
+    font-family:bungee ;
+}
+
+
+#inp:focus{
+    outline: none;
+    width: 140px;
+    box-shadow: 0px 0px 0px 2px rgb(99, 198, 90) ;
+}
+
+#search:hover + #inp {
+width: 140px;
+}
+
+#inp:hover{
+width: 140px;
+}
+
+
+.searchPhone{
+    display: none;
+    visibility: hidden;
+}
+
+.allSearchPhone{
+    display: none;
+    visibility: hidden;
+}
+
+.navbarPhone{
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+
+.alertLog{
+    width: 40%;
+    height: 50%;
+    margin: 100px auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    background-color: gainsboro;
+    border: 1px solid rgb(99, 198, 90);
+    border-radius: 10px;
+    z-index: 1000;
+    animation: fadeUpLog 1.5s 1;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+input, button{
+    width: 300px;
+    height: 30px;
+    margin: 20px;
+    border: 1px solid #000;
+    border-radius: 7px;
+    transition: 0.7s;
+    font-family: nunito;
+}
+
+button{
+    background-color: rgb(99, 198, 90) ;
+}
+
+input:focus, button:focus{
+    border: none;
+    box-shadow: 0px 0px 0px 2px rgb(99, 198, 90);
+    outline: none;
+    display: block;
+}
+
+#signInText{
+    font-size: 25px;
+    font-family: bungee;
+    color: rgb(99, 198, 90);
+}
+
+#closeAlertLog{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 1%;
+    left: 93%;
+    background-image: url(../../../../assets/images/times-circle.svg);
+    cursor: pointer;
+    outline: none;
+}
+
+#signUpText{
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: rgb(99, 198, 90);
+}
+
+.logInp:valid{
+    box-shadow: 0px 0px 0px 2px rgb(99, 198, 90);
+    
+}
+
+input:invalid{
+    box-shadow: 0px 0px 0px 2px tomato;
+}
+
+#alertExist{
+    font-family: bungee;
+    color: tomato;
+}
+
+.allAlertLog{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.692);
+    z-index: 1000;
+}
+
+@media all and (max-width: 1000px){
+    header{
+        width: 100%;
+        height: 55px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(20, 20, 20);
+        overflow: hidden;
+    }
+    
+    #logo{
+        width: 170px;
+        height: 60px;
+        margin: 0;
+        background-image: url(../../../../assets/images/geek-news-logo-header.png);
+        background-repeat: no-repeat;
+        background-size: 150%;
+        background-position: center;
+    }
+
+    .pages{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        font-family: bungee;
+        color: white;
+    }
+    
+    .page{
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.7s;
+        rotate: color, background-color;
+        border-radius: 10px;
+    }
+    
+    .page:hover{
+        cursor: pointer;
+        background-color: gray;
+        border: none;
+        border-radius: 10px;
+        color: rgb(99, 198, 90);
+    }
+    
+    .allSearch{
+        width: 170px;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+    #search, #login{
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .searchPhone{
+        display: none;
+    }
+    
+    
+    #inp{
+        width: 0;
+        height: 25px;
+        display: block;
+        margin-right: 5px;
+        border: none;
+        border-radius: 5px;
+        transition: 0.7s;
+        font-family:bungee ;
+    }
+    
+    
+    #inp:focus{
+        outline: none;
+        box-shadow: 0px 0px 0px 2px rgb(99, 198, 90) ;
+    }
+    
+    #search:hover + #inp {
+    width: 120px;
+    }
+    
+    #inp:hover{
+    width: 120px;
+    }
+
+    #closeAlertLog{
+        left: 91%;
+    }
+    
+}
+
+@media all and (max-width: 870px){
+    .alertLog{
+        width: 60%;
+        top: 20%;
+        left: 20%;
+    } 
+
+    input, button{
+        width: 400px;
+        height: 40px;
+      
+    }
+}
+
+@media all and (max-width: 770px){
+    header{
+        width: 100%;
+        height: 55px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(20, 20, 20);
+        overflow: hidden;
+    }
+
+    .menu{
+        display: flex;
+        width: 170px;
+        height: 50px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    #menuIcon{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        background-image: url(../../../../assets/images/bars-g.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120%;
+    }
+    
+    #logo{
+        width: 250px;
+        height: 60px;
+        background-image: url(../../../../assets/images/geek-news-logo-header.png);
+        background-repeat: no-repeat;
+        background-size: 150%;
+        background-position: center;
+    }
+    
+    
+    .pages{
+        width: 50%;
+        display: none;
+        justify-content: space-between;
+        color: white;
+    }
+    
+    .page{
+        width: 150px;
+        height: 40px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        font-family: bungee;
+        color: white;
+        font-size: 20px;
+        transition: 0.7s;
+        rotate: color, background-color;
+    }
+    
+    .page:hover{
+        cursor: pointer;
+        background-color: gray;
+        border: none;
+        border-radius: 10px;
+        color: rgb(99, 198, 90);
+    }
+    
+    .allSearch{
+       display: none;
+    }
+    
+    #search{
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../../assets/images/search-alt-g.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    #user{
+      display: none;
+    }
+
+    .allSearchPhone{
+        width: 170px;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        visibility: visible;
+    }
+
+    #searchPhone{
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../../assets/images/search-alt-g.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    #loginPhone{
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../../assets/images/sign-in-alt-g.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    #userPhone{
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../../assets/images/user-g.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .searchPhone{
+        width: 100%;
+        display: flex;
+        visibility: visible;
+        overflow: hidden;
+        transition: 0.7s;
+        rotate: height;
+    }
+
+    #SearchButton{
+        width: 15%;
+        height: 30px;
+        margin: 0;
+        border-radius: 0;
+        background-color: rgb(99, 198, 90);
+        border: 1px solid #000;
+        font-family:bungee ;
+        font-size: 12px;
+    }
+
+    #SearchButton:focus{
+        color: white;
+        background-color: rgb(125, 185, 119);
+        outline: none;
+    }
+    
+    #inpPhone{
+        width: 85%;
+        height: 30px;
+        margin: 0;
+        border-radius: 0;
+        display: block;
+        border: 1px solid #000;
+        transition: 0.3s;
+        rotate: display;
+        // font-family: main;
+        font-family: bungee;
+    }
+    
+    #inpPhone:focus{
+        outline: none;
+        border: none;
+        border: 1px solid rgb(99, 198, 90);
+    }
+
+    .navbarPhone{
+        width: 100%;
+        height: 0;
+        background-color: rgb(54, 53, 53);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        visibility: visible;
+        transition: 0.7s;
+        rotate: height;
+    }
+
+    hr{
+        width: 100%;
+        height: 3px;
+        border: none;
+        background-color: rgb(99, 198, 90);
+    }
+}
+
+@media all and (max-width: 690px){
+    .alertLog{
+        width: 100%;
+        height: 50%;
+        top: 20%;
+        left: 0;
+    } 
+
+    form{
+        width: 100%;
+        height: 80%;
+    }
+
+    input, button{
+        width: 90%;
+        height: 60px;
+      
+    }
+}
+
+@media all and (max-width: 450px){
+    #closeAlertLog{
+        top: 1%;
+    left: 90%;
+    }
+}
+
+@media all and (max-width: 320px){
+    input, button{
+        width: 90%;
+        height: 20px;
+        margin: 15px;
+    }
+
+    form{
+        height: 100%;
+    }
+}
+
