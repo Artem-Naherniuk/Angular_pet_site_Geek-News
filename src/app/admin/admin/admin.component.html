@@ -14,8 +14,10 @@
       [style.border]="description == '' ?'3px solid red': '3px solid green'">
 
     <span>Text </span>
-    <textarea id="area" cols="30" rows="10" placeholder="Write Text" [(ngModel)]="text" name="text"
-      [style.border]="text == '' ?'3px solid red': '3px solid green'"></textarea>
+    <div class="forQuill">
+      <quill-editor id="area" placeholder="Write Text" [(ngModel)]="text" name="text"></quill-editor>
+    </div>
+
 
     <span>Author </span> <input type="text" placeholder="Write Author" [(ngModel)]="author" name="author"
       [style.border]="author == '' ?'3px solid red': '3px solid green'">
@@ -38,6 +40,9 @@
       News</button>
 
   </div>
+
+
+
   <div class="forTable">
     <table>
       <thead>

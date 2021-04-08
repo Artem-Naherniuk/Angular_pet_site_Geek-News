@@ -45,6 +45,7 @@ export class AdminComponent implements OnInit {
     this.adminService.getJSONNews().subscribe(
       data => {
         this.newsArr = data;
+        this.newsArr.reverse();
       },
       err => console.log(err)
     );
@@ -142,7 +143,6 @@ export class AdminComponent implements OnInit {
 
   checkInp(): void {
     if (this.title == '' || this.text == '' || this.description == '' || this.author == '' || this.puthToImage == '') {
-      console.log('lox');
       this.validInp = true;
     }
     else {

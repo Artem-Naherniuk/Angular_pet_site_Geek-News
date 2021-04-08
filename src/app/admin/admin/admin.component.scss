@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
 @font-face {
   font-family: "nunitoLight";
   src: url(../../../assets/fonts/Nunito/Nunito-Light.ttf);
@@ -60,12 +64,15 @@ input:focus {
 }
 
 #area {
-  width: 30%;
-  height: 350px;
-  resize: none;
   box-shadow: 1px 2px 10px 0.5px rgb(144, 144, 144);
-  border: 1px solid #000;
+  border: none;
   border-radius: 5px;
+  margin-bottom: 70px;
+}
+
+#forQuill{
+  width: 30%;
+  height: 450px;
 }
 
 #area:focus {

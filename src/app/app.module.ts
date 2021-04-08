@@ -6,9 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './components/header/header/header.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
+
 import { AdminComponent } from './admin/admin/admin.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HomeComponent } from './pages/home/home/home.component';
@@ -31,6 +34,8 @@ import { SearchComponent } from './pages/search/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { UserComponent } from './pages/user/user/user.component';
+
+import { QuillModule } from 'ngx-quill'
 
 @NgModule({
   declarations: [
@@ -58,7 +63,8 @@ import { UserComponent } from './pages/user/user/user.component';
     HttpClientModule,
     ReactiveFormsModule,
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
