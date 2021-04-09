@@ -33,11 +33,7 @@ export class HeaderComponent implements OnInit {
     password: new FormControl('', [Validators.required])
   });
 
-  // gMenu: string = 'url(../../../../assets/images/bars-g.svg)';
-
   wMenu: string = 'url(../../../../assets/images/bars.svg)';
-
-  // gSearchPhone: string = 'url(../../../../assets/images/search-alt-g.svg)';
   
   wSearchPhone:string = 'url(../../../../assets/images/search-alt.svg)';
 
