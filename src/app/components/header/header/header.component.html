@@ -1,7 +1,7 @@
 <header>
   <div class="menu">
     <div id="menuIcon" (click)="menu()"
-      [style.background-image]="visibleMenu ? gMenu : wMenu">
+      [style.background-image]="visibleMenu ? '' : wMenu">
     </div>
   </div>
 
@@ -25,7 +25,7 @@
 
   <div class="allSearchPhone">
     <div id="searchPhone" (click)="visibleInputP()"
-      [style.background-image]="visibleInputPhone ? gSearchPhone : wSearchPhone">
+      [style.background-image]="visibleInputPhone ? '' : wSearchPhone">
     </div>
     <div id="loginPhone" (click)="doVisibleLogin()" [style.display]="userPage ? 'none' : 'block'"></div>
     <div id="userPhone" [style.display]="userPage ? 'block' : 'none'"></div>
