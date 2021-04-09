@@ -412,11 +412,17 @@ input:invalid{
     #menuIcon{
         width: 30px;
         height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-right: 10px;
-        background-image: url(../../../../assets/images/bars-g.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 120%;
+        font-size: 35px;
+        color: rgb(99, 198, 90);
+
+    }
+
+    #menuIcon:focus{
+        outline: none;
     }
     
     #logo{
@@ -490,28 +496,38 @@ input:invalid{
     #searchPhone{
         width: 30px;
         height: 30px;
-        background-image: url(../../../../assets/images/search-alt-g.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        color: rgb(99, 198, 90);
+        margin-right: 5px;
     }
+
+    
 
     #loginPhone{
         width: 30px;
         height: 30px;
-        background-image: url(../../../../assets/images/sign-in-alt-g.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        color: rgb(99, 198, 90);
     }
 
     #userPhone{
         width: 30px;
         height: 30px;
-        background-image: url(../../../../assets/images/user-g.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        color: rgb(99, 198, 90);
+    }
+
+    #userPhone:focus{
+         outline: none;
     }
 
     .searchPhone{

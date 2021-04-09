@@ -33,10 +33,6 @@ export class HeaderComponent implements OnInit {
     password: new FormControl('', [Validators.required])
   });
 
-  wMenu: string = 'url(../../../../assets/images/bars.svg)';
-  
-  wSearchPhone:string = 'url(../../../../assets/images/search-alt.svg)';
-
   constructor(
     private getSearch: GetSearchService,
     private router: Router,
@@ -165,7 +161,6 @@ export class HeaderComponent implements OnInit {
   resetForms(): void {
     this.signForm.reset();
   }
-
 
 }
 

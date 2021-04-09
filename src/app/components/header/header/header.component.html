@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 <header>
   <div class="menu">
-    <div id="menuIcon" (click)="menu()"
-      [style.background-image]="visibleMenu ? '' : 'url(../../../../assets/images/bars.svg)'">
+    <div id="menuIcon" (click)="menu()">
+      <i class="uil uil-bars" [style.color]="visibleMenu ? '' : 'white' "></i>
     </div>
   </div>
 
@@ -16,7 +17,7 @@
   </div>
 
   <div class="allSearch">
-    <div id="user" [style.display]="userPage ? 'block' : 'none'"></div>
+    <div id="user" [style.display]="userPage ? 'block' : 'none'" [routerLink]="[ '/userP' ]"></div>
     <div id="login" (click)="doVisibleLogin()" [style.display]="userPage ? 'none' : 'block'"></div>
     <div id="search"></div>
     <input id="inp" type="text" placeholder="Search news" [(ngModel)]="searchPc" name="searchPc"
@@ -24,11 +25,15 @@
   </div>
 
   <div class="allSearchPhone">
-    <div id="searchPhone" (click)="visibleInputP()"
-      [style.background-image]="visibleInputPhone ? '' : url(../../../../assets/images/search-alt.svg)">
+    <div id="searchPhone" (click)="visibleInputP()">
+      <i class="uil uil-search-alt"  [style.color]="visibleInputPhone ? '' : 'white'"></i>
     </div>
-    <div id="loginPhone" (click)="doVisibleLogin()" [style.display]="userPage ? 'none' : 'block'"></div>
-    <div id="userPhone" [style.display]="userPage ? 'block' : 'none'"></div>
+    <div id="loginPhone" (click)="doVisibleLogin()" [style.display]="userPage ? 'none' : 'flex'">
+      <i class="uil uil-sign-in-alt" [style.color]="visibleLog ? '' : 'white'"></i>
+    </div>
+    <div id="userPhone" [style.display]="userPage ? 'flex' : 'none'" [routerLink]="[ '/userP' ]">
+      <i class="uil uil-user"></i>
+    </div>
   </div>
 </header>
 <div class="searchPhone" [style.height]="visibleInputPhone ? '0px': '30px'">
