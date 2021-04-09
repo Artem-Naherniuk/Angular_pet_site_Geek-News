@@ -51,8 +51,6 @@ export class AdminLoginComponent implements OnInit {
         )
       ).subscribe(data => {
         this.usersCollection.push(data);
-        console.log(this.usersCollection);
-        
       });
   }
 
