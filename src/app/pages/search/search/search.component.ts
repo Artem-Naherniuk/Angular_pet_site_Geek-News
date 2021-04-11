@@ -54,7 +54,7 @@ export class SearchComponent implements OnInit {
           item.description.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()));
         }
         if(this.searchingNews.length < 1){
-        this.existOrnotExist = false;
+        this.existOrnotExist = false;//new
         }
       },
       err => console.log(err)
