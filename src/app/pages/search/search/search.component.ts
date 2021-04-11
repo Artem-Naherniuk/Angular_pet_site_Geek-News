@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
           this.searchingNews = this.newsArr.filter(item => item.title.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) ||
           item.description.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()));
         }
-        else{
+        if(this.searchingNews.length < 1){
         this.existOrnotExist = false;
         }
       },
