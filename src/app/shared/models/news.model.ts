@@ -10,6 +10,6 @@ export class News implements INews {
         public data: string,
         public category: string,
         public author: string,
-        public id?: number,
+        public order: number,
     ){}
 }

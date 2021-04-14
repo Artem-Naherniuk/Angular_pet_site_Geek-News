@@ -7,5 +7,6 @@ export interface INews {
     data: string;
     category: string;
     author: string;
-    id?: number;
+    id?: string | number;
+    order: number;
 }

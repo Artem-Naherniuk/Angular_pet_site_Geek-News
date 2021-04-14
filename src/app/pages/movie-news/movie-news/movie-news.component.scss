@@ -1,18 +1,3 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "bungee";
-  src: url(../../../../assets/fonts/Bungee/Bungee-Regular.ttf);
-}
-
-@font-face {
-  font-family: "nunito";
-  src: url(../../../../assets/fonts/Nunito/Nunito-Black.ttf);
-}
 
 .forBack {
   background-color: black;
@@ -40,7 +25,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -64,6 +49,11 @@
   transition: 0.7s;
   transition-property: background-size;
   animation: fadeUpSmall 1.5s 1;
+}
+
+.evenOrOdd{
+  width: 520px;
+  height: 330px;
 }
 
 .usualNews:focus {
@@ -128,11 +118,12 @@
 }
 
 @media all and (max-width: 2070px){
-  .usualNews {
+  .usualNews, .evenOrOdd {
     width: 450px;
     height: 290px;
     margin: 30px;
   }
+
   #titleUsual {
     font-size: 20px;
     font-family: bungee;
@@ -155,7 +146,7 @@
 }
 
 @media all and (max-width: 1840px){
-  .usualNews {
+  .usualNews, .evenOrOdd {
     width: 400px;
     height: 260px;
   }
@@ -166,28 +157,28 @@
 }
 
 @media all and (max-width: 1535px){
-  .usualNews {
+  .usualNews, .evenOrOdd {
     width: 350px;
     height: 220px;
   }
 }
 
 @media all and (max-width: 1366px){
-  .usualNews {
+  .usualNews, .evenOrOdd {
     width: 320px;
     height: 200px;
   }
 }
 
 @media all and (max-width: 1280px){
-  .usualNews {
+  .usualNews, .evenOrOdd {
     width: 320px;
     height: 200px;
   }
 }
 
 @media all and (max-width: 925px){
-  .usualNews {
+  .usualNews, .evenOrOdd {
     width: 270px;
     height: 190px;
   }
@@ -224,6 +215,14 @@
   .usualNews {
     width: 550px;
     height: 340px;
+  }
+
+  .evenOrOdd{
+    width: 0;
+    height: 0;
+    margin: 0;
+    display: none;
+    visibility: hidden;
   }
 
   .namingUsual {

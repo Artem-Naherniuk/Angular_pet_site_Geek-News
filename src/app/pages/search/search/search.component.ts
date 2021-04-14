@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { INews } from 'src/app/shared/interfaces/news.interface';
 import { AdminService } from 'src/app/shared/services/admin/admin.service';
 import { GetIdService } from 'src/app/shared/services/get-id/get-id.service';
@@ -18,11 +19,16 @@ export class SearchComponent implements OnInit {
 
   search:string = '';
 
-  idNews: number;
+  idNews: string | number;
   
   subscription: Subscription;
 
   existOrnotExist: boolean = true;
+
+  checkForNews: number;
+
+  twoCheckForNews: number;
+
 
   constructor(
     private adminService: AdminService, 
@@ -35,30 +41,56 @@ export class SearchComponent implements OnInit {
         if(this.searchingNews.length < 1){
         this.existOrnotExist = false;
         }
+        this.checkForNews = this.searchingNews.length + 2;
+        this.twoCheckForNews = this.searchingNews.length + 1;
        });
      
        
     }
 
   ngOnInit(): void {
-    this.getNews();
+    // this.getNews();
+    this.  getNewsFire();
   }
 
-  getNews(): void {
-    this.adminService.getJSONNews().subscribe(
-      data => {
-        this.newsArr = data; 
-        this.search = this.searchText.getSearchText();         
+  // getNews(): void {
+  //   this.adminService.getJSONNews().subscribe(
+  //     data => {
+  //       this.newsArr = data; 
+  //       this.search = this.searchText.getSearchText();         
+  //       if(this.search !== undefined){
+  //         this.searchingNews = this.newsArr.filter(item => item.title.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) ||
+  //         item.description.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()));
+  //       }
+  //       if(this.searchingNews.length < 1){
+  //       this.existOrnotExist = false;//
+  //       }
+  //     },
+  //     err => console.log(err)
+  //   );
+  // }
+
+  getNewsFire(): void {
+    this.adminService.getFireCloudNews().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.newsArr = data;
+      this.newsArr.sort((prev, next) => prev.order - next.order).reverse();
+      this.search = this.searchText.getSearchText();         
         if(this.search !== undefined){
           this.searchingNews = this.newsArr.filter(item => item.title.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) ||
           item.description.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()));
         }
         if(this.searchingNews.length < 1){
-        this.existOrnotExist = false;//new
-        }
-      },
-      err => console.log(err)
-    );
+        this.existOrnotExist = false;
+        }; 
+        this.checkForNews = this.searchingNews.length + 2;
+        this.twoCheckForNews = this.searchingNews.length + 1;
+    });
   }
 
   checkId(index: number): void {

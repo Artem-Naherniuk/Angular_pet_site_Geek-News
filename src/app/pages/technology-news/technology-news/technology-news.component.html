@@ -1,18 +1,21 @@
 <div class="forBack">
-    <div class="background">
-      <span id="title">Technology</span>
-    </div>
+  <div class="background">
+    <span id="title">Technology</span>
   </div>
-  <div class="container">
-    <div class="usualNews" [routerLink]=" '/news' " *ngFor="let news of newsForPages;index as i" [style.background-image]="'url(' + news.image + ')'" (click)="checkId(i)">
-      <div class="namingUsual">
-        <span id="titleUsual">{{news.title}}</span>
-        <span id="descriptionUsual">{{news.description}}</span>
-        <div class="bataAndCategory">
-          <span id="dateUsual">{{news.data}}</span>
-          <span id="categoryUsual">{{news.category}}</span>
-        </div>
+</div>
+<div class="container">
+  <div class="usualNews" [routerLink]=" '/news' " *ngFor="let news of newsForPages;index as i"
+    [style.background-image]="'url(' + news.image + ')'" (click)="checkId(i)">
+    <div class="namingUsual">
+      <span id="titleUsual">{{news.title}}</span>
+      <span id="descriptionUsual">{{news.description}}</span>
+      <div class="bataAndCategory">
+        <span id="dateUsual">{{news.data}}</span>
+        <span id="categoryUsual">{{news.category}}</span>
       </div>
     </div>
   </div>
-  
+  <div class="evenOrOdd" [style.display]="twoCheckForNews % 3 == 0 ? 'flex' : 'none'"></div>
+  <div class="evenOrOdd" [style.display]="checkForNews % 3 == 0 ? 'flex' : 'none'"></div>
+  <div class="evenOrOdd" [style.display]="checkForNews % 3 == 0 ? 'flex' : 'none'"></div>
+</div>
